@@ -19,10 +19,10 @@ std::pair<std::stack<Node*>, int> Node::ida_star(Board* goal) {
 
             return std::make_pair(result, threshold);
         }
-        else if (res.second == INT_MAX) {
+
+        if (res.second == INT_MAX) {
             return std::make_pair(result, -1);
         }
-        // Exit condition if no result
 
         threshold = res.second;
     }
@@ -36,6 +36,7 @@ std::pair<bool, int> Node::search(std::stack<Node*> path, int g, int threshold, 
     if (f > threshold) {
         return std::make_pair(false, f);
     }
+
     if (current->is_goal()) {
         return std::make_pair(true, threshold);
     }
@@ -43,19 +44,19 @@ std::pair<bool, int> Node::search(std::stack<Node*> path, int g, int threshold, 
     int min = INT_MAX;
 
     if (current->children.empty()) {
-        current->generate_children(goal); // Children are sorted by the function
+        current->generate_children(goal); // Children are ordered by
     }
 
     std::vector<Node*>::iterator it;
     for (it = current->children.begin(); it != current->children.end(); ++it) {
-        std::vector<Node*>::iterator in_path = std::find(visited.begin(), visited.end(), *it);
+        std::vector<Node*>::iterator in_path = std::find(visited.begin(), visited.end(), *it); // Check if the node is already in the path
 
         if (in_path == visited.end()) {
             path.push(*it);
             std::pair<bool, int> res = search(path, g + 1, threshold, visited, result, goal);
 
             if (res.first) {
-                (*result).push(*it);
+                (*result).push(*it); // Construct the result path
                 return std::make_pair(true, f);
             }
 
