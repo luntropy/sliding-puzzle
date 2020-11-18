@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -O3
 
 main: main.o Board.o Node.o
 	$(CC) $(CFLAGS) -o main main.o Board.o Node.o
