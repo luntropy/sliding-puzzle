@@ -36,5 +36,9 @@ int main() {
         std::cout << "No solution found." << std::endl;
     }
 
+    delete goal;
+    delete start_board;
+    delete start;
+
     return 0;
 }
