@@ -14,7 +14,7 @@ The objective of the program is to find a solution to a given sliding puzzle. A 
 - The index '-1' is the default position of the empty place - bottom right.
 
 ## About the program
-The program uses the algorithm **IDA*** and **Manhattan distance** to find the optimal solution to the given puzzle.
+The program uses the algorithm **IDA\*** and **Manhattan distance** to find the optimal solution to the given puzzle.
 
 - There is no solution to some of the puzzle's configurations.
 - More information about the unsolvable puzzles - [Here](https://www.cs.princeton.edu/courses/archive/spring18/cos226/assignments/8puzzle/index.html)
@@ -33,5 +33,5 @@ The program uses the algorithm **IDA*** and **Manhattan distance** to find the o
 ### Example
 ![Example](https://github.com/luntropy/sliding-puzzle/blob/main/images/example-puzzle-3x3.png)
 
-### Visualization of the solution - no movements needed
+### Visualization of the final result - no movements needed
 ![Example-solution-visualization](https://github.com/luntropy/sliding-puzzle/blob/main/images/example-puzzle-3x3-no-movements.png)
