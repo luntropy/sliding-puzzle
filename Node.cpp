@@ -44,7 +44,7 @@ std::pair<bool, int> Node::search(std::stack<Node*> path, int g, int threshold, 
     int min = INT_MAX;
 
     if (current->children.empty()) {
-        current->generate_children(goal); // Children are ordered by
+        current->generate_children(goal); // Children are sorted by the function
     }
 
     std::vector<Node*>::iterator it;
